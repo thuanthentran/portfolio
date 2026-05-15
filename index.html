@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trần Thuận Thến - DevOps / Cloud Engineer portfolio" />
+  <meta name="theme-color" content="#050505" />
+  <title>Trần Thuận Thến | DevOps / Cloud Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --bg-soft: #0b0f0c;
+      --panel: rgba(15, 18, 16, 0.72);
+      --panel-strong: rgba(10, 12, 11, 0.92);
+      --line: rgba(255, 255, 255, 0.1);
+      --text: #f5f5f5;
+      --muted: #b7bdb8;
+      --accent: #1f7a4d;
+      --accent-strong: #2dd17c;
+      --accent-soft: rgba(31, 122, 77, 0.15);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Comfortaa', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(45, 209, 124, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 25%),
+        linear-gradient(180deg, #050505 0%, #070a08 45%, #050505 100%);
+      color: var(--text);
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+    }
+
+    .glass-strong {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .text-muted {
+      color: var(--muted);
+    }
+
+    .section-kicker {
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #88d6a6;
+    }
+
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(circle at center, black 38%, transparent 90%);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      transition: transform 180ms ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .hover-lift {
+      transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .hover-lift:hover,
+    .hover-lift:focus-within {
+      transform: translateY(-4px);
+      border-color: rgba(45, 209, 124, 0.3);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+    }
+
+    .badge {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: #edf6f0;
+    }
+
+    .badge-accent {
+      background: rgba(45, 209, 124, 0.12);
+      border-color: rgba(45, 209, 124, 0.24);
+      color: #b8f3d3;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #cfead8 50%, #74d99a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .floating-orb {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(4px);
+      pointer-events: none;
+      opacity: 0.75;
+    }
+
+    .mobile-menu {
+      transform-origin: top;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .tech-divider {
+      background: linear-gradient(90deg, transparent, rgba(45, 209, 124, 0.7), transparent);
+      height: 1px;
+    }
+
+    .focus-ring:focus-visible {
+      outline: 2px solid rgba(45, 209, 124, 0.85);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-emerald-400 selection:text-black">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-black focus:px-4 focus:py-2 focus:text-white focus-ring">Skip to content</a>
+
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <a href="#hero" class="text-lg font-bold tracking-wide text-white transition hover:text-emerald-300 focus-ring">Trần Thuận Thến</a>
+
+      <nav class="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
+        <a class="nav-link text-sm text-white/80 transition hover:text-white focus-ring" href="#about">About</a>
+        <a class="nav-link text-sm text-white/80 transition hover:text-white focus-ring" href="#tech-stack">Tech Stack</a>
+        <a class="nav-link text-sm text-white/80 transition hover:text-white focus-ring" href="#projects">Projects</a>
+        <a class="nav-link text-sm text-white/80 transition hover:text-white focus-ring" href="#contact">Contact</a>
+        <button id="downloadCvBtn" class="focus-ring rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300 hover:bg-emerald-400/18 hover:text-white">
+          Download CV
+        </button>
+      </nav>
+
+      <button id="menuToggle" class="focus-ring inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-3 text-white transition hover:border-emerald-400/30 hover:bg-white/10 md:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu hidden origin-top border-t border-white/10 bg-black/95 px-4 py-4 md:hidden">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3 text-sm">
+        <a class="rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-white focus-ring" href="#about">About</a>
+        <a class="rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-white focus-ring" href="#tech-stack">Tech Stack</a>
+        <a class="rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-white focus-ring" href="#projects">Projects</a>
+        <a class="rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-white focus-ring" href="#contact">Contact</a>
+        <button id="downloadCvBtnMobile" class="focus-ring rounded-2xl border border-emerald-400/25 bg-emerald-400/10 px-4 py-3 text-left font-semibold text-emerald-200 transition hover:border-emerald-300 hover:bg-emerald-400/18 hover:text-white">
+          Download CV
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="relative overflow-hidden">
+      <div class="hero-grid absolute inset-0 opacity-40"></div>
+      <div class="floating-orb left-8 top-16 h-44 w-44 bg-emerald-400/10"></div>
+      <div class="floating-orb right-8 top-32 h-56 w-56 bg-white/8"></div>
+
+      <div class="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
+        <div class="reveal relative z-10">
+          <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-200">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            DevOps / Cloud Engineer Portfolio
+          </div>
+          <h1 class="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl lg:text-7xl">
+            Hi, I'm <span class="gradient-text">Trần Thuận Thến</span>
+          </h1>
+          <p class="mt-5 text-xl font-semibold text-white/85 sm:text-2xl">DevOps Enginneer</p>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
+            A student at VNU - University of Information Technology, aims to be a DevOps enginneer.
+          </p>
+
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a href="#projects" class="focus-ring inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black transition hover:bg-emerald-200">
+              View My Work
+            </a>
+            <div class="flex items-center gap-3">
+              <a href="https://github.com/thuanthentran" target="_blank" rel="noreferrer" aria-label="GitHub" class="focus-ring inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/10 hover:text-emerald-200">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.78.5 12.3c0 5.23 3.44 9.67 8.21 11.23.6.12.82-.27.82-.58 0-.29-.01-1.05-.02-2.06-3.34.75-4.04-1.65-4.04-1.65-.55-1.45-1.34-1.84-1.34-1.84-1.1-.78.08-.76.08-.76 1.21.09 1.85 1.28 1.85 1.28 1.08 1.89 2.84 1.35 3.53 1.03.11-.81.42-1.35.77-1.66-2.67-.31-5.47-1.37-5.47-6.09 0-1.35.46-2.46 1.22-3.33-.12-.31-.53-1.56.12-3.26 0 0 .99-.33 3.24 1.27.94-.27 1.94-.41 2.94-.42 1 .01 2 .15 2.94.42 2.25-1.6 3.24-1.27 3.24-1.27.65 1.7.24 2.95.12 3.26.76.87 1.22 1.98 1.22 3.33 0 4.73-2.81 5.77-5.49 6.08.43.38.81 1.14.81 2.31 0 1.67-.02 3.02-.02 3.43 0 .31.22.7.83.58 4.77-1.56 8.2-6 8.2-11.23C23.5 5.78 18.35.5 12 .5z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/thu%E1%BA%ADn-th%E1%BA%BFn-tr%E1%BA%A7n-33b640190/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="focus-ring inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/10 hover:text-emerald-200">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.37V9h3.41v1.56h.05c.47-.89 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.42v6.32zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              </a>
+              <a href="mailto:thuanthentran@gmail.com" aria-label="Email" class="focus-ring inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/10 hover:text-emerald-200">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25l9 6 9-6M4.5 6h15A1.5 1.5 0 0 1 21 7.5v9A1.5 1.5 0 0 1 19.5 18h-15A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/tthen_nart/" target="_blank" rel="noreferrer" aria-label="Instagram" class="focus-ring inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/10 hover:text-emerald-200">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.265-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal relative z-10">
+          <div class="glass-strong relative overflow-hidden rounded-[2rem] p-6 sm:p-8">
+            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="section-kicker text-xs font-semibold">High-tech focus</p>
+                <p class="mt-2 text-lg font-semibold text-white">Infrastructure • Automation • Reliability</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-right">
+                <p class="text-xs uppercase tracking-[0.2em] text-emerald-200">Status</p>
+                <p class="mt-1 text-sm font-semibold text-white">Open to internships</p>
+              </div>
+            </div>
+
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-3xl border border-white/10 bg-white/5 p-5 hover-lift">
+                <p class="text-xs uppercase tracking-[0.2em] text-white/45">Stack</p>
+                <p class="mt-2 text-2xl font-bold text-white">Cloud-native</p>
+                <p class="mt-3 text-sm leading-7 text-muted">Designing deployment workflows, resilient infrastructure, and observability-first systems.</p>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/5 p-5 hover-lift">
+                <p class="text-xs uppercase tracking-[0.2em] text-white/45">Approach</p>
+                <p class="mt-2 text-2xl font-bold text-white">Automation</p>
+                <p class="mt-3 text-sm leading-7 text-muted">Turning repetitive operational tasks into reliable, reproducible pipelines.</p>
+              </div>
+            </div>
+
+            <div class="mt-4 rounded-3xl border border-emerald-400/15 bg-emerald-400/10 p-5">
+              <p class="text-xs uppercase tracking-[0.2em] text-emerald-200">Focus area</p>
+              <p class="mt-2 text-sm leading-7 text-white/90">Infrastructure that is measurable, secure, and easy to evolve.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl reveal">
+        <div class="mb-8 max-w-2xl">
+          <p class="section-kicker text-sm font-semibold">About</p>
+          <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">A DevOps mindset built on systems thinking.</h2>
+          <p class="mt-4 text-base leading-8 text-muted sm:text-lg">A concise technical story for recruiters: what I build, how I think, and where I am heading.</p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <article class="glass hover-lift rounded-[2rem] p-6 sm:p-8">
+            <p class="text-base leading-8 text-white/85 sm:text-lg">
+              I am a third-year student majoring in DevOps at the Faculty of Computer Network and Communication, VNU - University of Information Technology. My goal is to grow into Infrastructure, System Administration, and Automation engineering roles.
+            </p>
+            <div class="mt-6 tech-divider"></div>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+                <p class="text-sm font-semibold text-white">System & Network</p>
+                <p class="mt-2 text-sm leading-7 text-muted">Linux administration on Ubuntu, along with designing and simulating network topologies.</p>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+                <p class="text-sm font-semibold text-white">Cloud-native & DevOps</p>
+                <p class="mt-2 text-sm leading-7 text-muted">Deploying applications with Docker and Kubernetes, integrating CI/CD pipelines, and managing configurations.</p>
+              </div>
+            </div>
+          </article>
+
+          <aside class="glass-strong hover-lift rounded-[2rem] p-6 sm:p-8">
+            <p class="section-kicker text-sm font-semibold">Research interest</p>
+            <h3 class="mt-3 text-2xl font-bold text-white">AI / ML / DL for AIOps and MLOps</h3>
+            <p class="mt-4 text-base leading-8 text-muted">I am especially interested in building machine learning models and integrating them into operational workflows that improve reliability, automation, and observability.</p>
+            <div class="mt-6 rounded-3xl border border-emerald-400/15 bg-emerald-400/10 p-5">
+              <p class="text-sm font-semibold text-emerald-100">Core thesis direction</p>
+              <p class="mt-2 text-sm leading-7 text-emerald-50/85">Bringing AI/ML/DL into production-grade infrastructure practices.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech-stack" class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl reveal">
+        <div class="mb-8 max-w-2xl">
+          <p class="section-kicker text-sm font-semibold">Tech Stack</p>
+          <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Tools I use to build, ship, secure, and observe.</h2>
+          <p class="mt-4 text-base leading-8 text-muted sm:text-lg">Organized by domain so recruiters can scan quickly.</p>
+        </div>
+        <div id="techGrid" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl reveal">
+        <div class="mb-8 max-w-2xl">
+          <p class="section-kicker text-sm font-semibold">Projects</p>
+          <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Selected work, sorted by timeline.</h2>
+          <p class="mt-4 text-base leading-8 text-muted sm:text-lg">Each card includes context, timeline, stack, and source link styling built for recruiter readability.</p>
+        </div>
+        <div id="projectGrid" class="grid gap-6 lg:grid-cols-2"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl reveal">
+        <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+          <div class="glass hover-lift rounded-[2rem] p-6 sm:p-8">
+            <p class="section-kicker text-sm font-semibold">Contact</p>
+            <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Let’s build reliable systems.</h2>
+            <p class="mt-4 text-base leading-8 text-muted">If you are hiring for DevOps, Cloud, Platform, or Infrastructure-focused roles, I would love to connect.</p>
+
+            <div class="mt-8 space-y-4">
+              <a href="mailto:thuanthentran@gmail.com" class="focus-ring flex items-center justify-between rounded-3xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-emerald-400/25 hover:bg-emerald-400/10">
+                <span>
+                  <span class="block text-sm font-semibold text-white">Email</span>
+                  <span class="block text-sm text-muted">thuanthentran@gmail.com</span>
+                </span>
+                <span class="text-emerald-200">→</span>
+              </a>
+              <a href="https://github.com/thuanthentran" target="_blank" rel="noreferrer" class="focus-ring flex items-center justify-between rounded-3xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-emerald-400/25 hover:bg-emerald-400/10">
+                <span>
+                  <span class="block text-sm font-semibold text-white">GitHub</span>
+                  <span class="block text-sm text-muted">Source code and experiments</span>
+                </span>
+                <span class="text-emerald-200">→</span>
+              </a>
+              <a href="https://www.linkedin.com/in/thu%E1%BA%ADn-th%E1%BA%BFn-tr%E1%BA%A7n-33b640190/" target="_blank" rel="noreferrer" class="focus-ring flex items-center justify-between rounded-3xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-emerald-400/25 hover:bg-emerald-400/10">
+                <span>
+                  <span class="block text-sm font-semibold text-white">LinkedIn</span>
+                  <span class="block text-sm text-muted">Professional profile and updates</span>
+                </span>
+                <span class="text-emerald-200">→</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="glass-strong hover-lift rounded-[2rem] p-6 sm:p-8" onsubmit="event.preventDefault(); alert('Thanks for reaching out. Replace this demo action with your preferred form handler.');">
+            <div class="grid gap-4">
+              <div>
+                <label for="name" class="mb-2 block text-sm font-semibold text-white">Name</label>
+                <input id="name" name="name" type="text" required class="focus-ring w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 transition focus:border-emerald-400/30 focus:bg-white/8" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email" class="mb-2 block text-sm font-semibold text-white">Email</label>
+                <input id="email" name="email" type="email" required class="focus-ring w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 transition focus:border-emerald-400/30 focus:bg-white/8" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label for="message" class="mb-2 block text-sm font-semibold text-white">Message</label>
+                <textarea id="message" name="message" rows="6" required class="focus-ring w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 transition focus:border-emerald-400/30 focus:bg-white/8" placeholder="Tell me about the role, team, or project."></textarea>
+              </div>
+              <button type="submit" class="focus-ring inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3.5 text-sm font-bold text-black transition hover:bg-emerald-300">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-sm text-white/55">© <span id="year"></span> Trần Thuận Thến. All rights reserved.</p>
+      <a href="#hero" class="focus-ring inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 transition hover:border-emerald-400/30 hover:bg-emerald-400/10 hover:text-white">Back to Top</a>
+    </div>
+  </footer>
+
+  <script>
+    const techCategories = [
+      {
+        title: 'Cloud & Infrastructure as Code (IaC)',
+        items: ['AWS', 'Azure', 'Terraform', 'Ansible', 'Checkov'],
+      },
+      {
+        title: 'Containers & Orchestration',
+        items: ['Docker', 'Kubernetes'],
+      },
+      {
+        title: 'CI/CD & GitOps',
+        items: ['Jenkins', 'GitHub Actions', 'ArgoCD', 'Argo Rollouts', 'Kyverno'],
+      },
+      {
+        title: 'Observability & Security',
+        items: ['Prometheus', 'Grafana', 'ELK Stack', 'Trivy', 'SonarQube'],
+      },
+      {
+        title: 'Scripting & Languages',
+        items: ['Python', 'Bash', 'Node.js', 'C#', 'Java', 'Kotlin', 'C++'],
+      },
+    ];
+
+    const projects = [
+      {
+        title: 'Intergrating a Reinforcement Learning Agent into Canary Release phase of a microservices application',
+        timeline: '01/2026 - now',
+        tag: 'course project and research project',
+        description: 'Trained a Reinforcement Learning Agent using DQN and LSTM algorithm and intergrated it into Kubernetes environment to drive Canary release phase of a microservice application.',
+        stack: ['Python (PyTorch)', 'GitHub', 'GitHub Actions', 'ArgoCD', 'Argo Rollouts', 'Nginx', 'Grafana', 'Prometheus'],
+        source: 'https://github.com/thuanthentran/dqn-lstm-agent-driven-canary-release',
+      },
+      {
+        title: 'Intergrating full CI/CD pipeline deploying Microservices web application following GitOps',
+        timeline: '01/2026 - now',
+        tag: 'course project',
+        description: 'Intergrating CI/CD pipeline with GitOps to deploy “microservices-demo” by Google.',
+        stack: ['Terraform', 'AWS', 'VPC', 'Checkov', 'Git', 'GitHub', 'GitHub Action', 'Jenkins', 'SonarQube', 'Harbor', 'Trivy', 'Docker', 'EKS', 'ArgoCD', 'Argo Rollouts', 'Helm'],
+        source: 'https://github.com/thuanthentran/gitops-for-microservices-demo',
+      },
+      {
+        title: 'Security scan for Microsoft SQL server',
+        timeline: '01/2026 - now',
+        tag: 'course project',
+        description: 'Intergrating a scanning tool for Microsoft SQL server database, based on CIS benchmark policies.',
+        stack: ['Python', 'Ansible'],
+        source: 'https://github.com/thuanthentran/nt542-db_scanner-gr06',
+      },
+      {
+        title: 'English Learning Assistant',
+        timeline: '10/2025 - 12/2025',
+        tag: 'course project',
+        description: 'Developed a mobile application which aim to support a diverse type of English learners.',
+        stack: ['Kotlin', 'Jetpack Compose', 'GitHub (VCS)', 'Microsoft Foundry (LLM)'],
+        source: 'https://github.com/thuanthentran/EnglishLearningAssisistant',
+      },
+      {
+        title: 'Intergrating full CI/CD pipeline deploying Web application',
+        timeline: '09/2025 - 12/2025',
+        tag: 'course project',
+        description: 'Intergrating full CI/CD pipeline to deploy KitchenWhiz Web application.',
+        stack: ['Terraform', 'AWS', 'VPC', 'Git', 'GitHub', 'Jenkins', 'SonarQube', 'Harbor', 'Trivy', 'Docker', 'EKS', 'React', 'Vite', 'TailwindCSS', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Swagger', 'Cloudinary'],
+        source: 'https://github.com/TrThuyTien/NT548-Project',
+      },
+      {
+        title: 'Developing a Web application for Clinic Management - Frontend',
+        timeline: '06/2025 - 12/2025',
+        tag: 'course project',
+        description: 'Developed a private clinic management web application strictly adhering to the Unified Process methodology, covering analysis, design, implementation, testing, and documentation.',
+        stack: ['React.js', 'JavaScript'],
+        source: 'https://github.com/SE104-Group02-ManagingClinic/FE-ManagingClinic',
+      },
+      {
+        title: 'Sign Language Regconition',
+        timeline: '06/2025 - 12/2025',
+        tag: 'research project',
+        description: 'Building a supervised machine learning model for sign language (frame sequence) classification. The model was trained using LSA64 Dataset (Argentinian Sign Language).',
+        stack: ['Python', 'TensorFlow'],
+        source: '#',
+      },
+      {
+        title: 'Desktop chat application',
+        timeline: '09/2024 - 01/2025',
+        tag: 'course project',
+        description: 'Developed a desktop application focused on TCP/UDP socket programming. Users can chat and play tic-tac-toe online in the same LAN.',
+        stack: ['TCP/UDP', 'Socket Programming', 'Desktop App'],
+        source: 'https://github.com/thuanthentran/ChatAppNT106',
+      },
+    ];
+
+    const techGrid = document.getElementById('techGrid');
+    const projectGrid = document.getElementById('projectGrid');
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    const badgeMarkup = (items, accent = false) => items.map((item) => `<span class="badge ${accent ? 'badge-accent' : ''} rounded-full px-3 py-1 text-xs font-semibold">${item}</span>`).join('');
+
+    techGrid.innerHTML = techCategories.map((category) => `
+      <article class="glass hover-lift rounded-[2rem] p-6 sm:p-7">
+        <h3 class="text-lg font-bold text-white">${category.title}</h3>
+        <div class="mt-5 flex flex-wrap gap-2">
+          ${badgeMarkup(category.items, true)}
+        </div>
+      </article>
+    `).join('');
+
+    projectGrid.innerHTML = projects.map((project) => `
+      <article class="glass hover-lift flex h-full flex-col rounded-[2rem] p-6 sm:p-7">
+        <div class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-emerald-200">
+          <span class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 font-semibold">${project.timeline}</span>
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-semibold text-white/70">${project.tag}</span>
+        </div>
+        <h3 class="mt-5 text-2xl font-bold leading-tight text-white">${project.title}</h3>
+        <p class="mt-4 text-sm leading-7 text-muted">${project.description}</p>
+        <div class="mt-6 flex flex-wrap gap-2">${badgeMarkup(project.stack)}</div>
+        <div class="mt-8">
+          <a href="${project.source}" class="focus-ring inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-emerald-400/30 hover:bg-emerald-400/10 hover:text-emerald-200">
+            View Source / GitHub
+          </a>
+        </div>
+      </article>
+    `).join('');
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuToggle = document.getElementById('menuToggle');
+    const menuIcon = document.getElementById('menuIcon');
+
+    function closeMenu() {
+      mobileMenu.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
+    }
+
+    function openMenu() {
+      mobileMenu.classList.remove('hidden');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+    }
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.contains('hidden') ? openMenu() : closeMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+
+    const cvText = `Trần Thuận Thến\nDevOps / Cloud Engineer\n\nSummary\n- Student at VNU - University of Information Technology\n- Focused on DevOps, cloud infrastructure, automation, and systems engineering\n\nTechnical Focus\n- Linux administration, networking, Docker, Kubernetes\n- CI/CD, GitOps, IaC, observability, and security scanning\n- AI/ML/DL for AIOps and MLOps\n\nSelected Interests\n- Infrastructure as Code\n- Platform Engineering\n- Reliable delivery pipelines\n`;
+
+    function downloadCV() {
+      const blob = new Blob([cvText], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = 'Tran_Thuan_Then_CV.txt';
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById('downloadCvBtn').addEventListener('click', downloadCV);
+    document.getElementById('downloadCvBtnMobile').addEventListener('click', downloadCV);
+
+    const revealTargets = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    revealTargets.forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
